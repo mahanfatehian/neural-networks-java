@@ -34,7 +34,7 @@ public class NumberGuessApp {
 
         for (NumbersRepresentation number : NumbersRepresentation.values()) {
             if (finalNumber.equals(number.getMatrix())) {
-                System.out.println("matched Number is : " + number);
+                System.out.printf("matched Number is : %s%n", number);
                 found = true;
             }
         }
