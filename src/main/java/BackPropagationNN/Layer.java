@@ -28,7 +28,7 @@ class Layer {
 
     protected double[] run(double[] inputs){
         System.arraycopy(inputs , 0 ,this.inputs , 0 ,  inputs.length );
-        this.inputs[this.inputs.length - 1] = 1.0; // FIXED: Set bias on instance array
+        this.inputs[this.inputs.length - 1] = 1.0; //set bias
 
 
         int offset=0 ;
