@@ -49,23 +49,20 @@ public class BackPropagationNN {
             }
         }
     }
-    public void predict(double[][] inputs) {
-        System.out.println("testing results :");
-        for (double[] input : inputs) {
-            double[] result = run(input);
-
-            System.out.print("Input: [");
-            for (int j = 0; j < input.length; j++) {
-                System.out.print(input[j] + (j < input.length - 1 ? ", " : ""));
-            }
-            System.out.print("] -> Output: [");
-            for (int j = 0; j < result.length; j++) {
-                System.out.printf("%.4f", result[j]);
-                System.out.print(j < result.length - 1 ? ", " : "");
-            }
-            System.out.println("]");
-        }
+    // single input
+    public double[] predict(double[] input) {
+        return run(input);
     }
 
+    // multiple inputs
+    public double[][] predictBatch(double[][] inputs) {
+        double[][] results = new double[inputs.length][];
+
+        for (int i = 0; i < inputs.length; i++) {
+            results[i] = run(inputs[i]);
+        }
+
+        return results;
+    }
 
 }
